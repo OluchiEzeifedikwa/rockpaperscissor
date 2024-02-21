@@ -2,7 +2,8 @@
 <html lang="en">
     <head>
         <meta charset=""UTF-8>
-        <title>javascript project</title>
+        <title>revisitrockpaper</title>
+        <script src="script.js" defer></script>
         
     </head>
     
@@ -10,96 +11,59 @@
         <h1>
           ROCK PAPER SCISSORS
         </h1>
+        <div id='container'>
 
-        <script>
+            <p id="res">
 
-             
-            const randomNumber = Math.floor(Math.random()*3);
+            </p>
 
-            function getComputerChoice() {
-                if(randomNumber == 0) {
-                    return 'rock';
-                } else if(randomNumber == 1) {
-                    return 'paper';
-                } else {
-                    return 'scissors';
-                }
-                
-                
-                    
-            };
 
-            console.log(getComputerChoice());
+
+            <div id="ply">
+                <button onclick="playRound()">playerSelection</button>
+            </div>
+            <div id="rock">
+
+            </div>
+            
+            <div id="pla">
+            <button onclick="playRound1()">playerSelection</button>
+            </div>
+            <div id="paper">
+
+            </div>
+            
+
+            <div id="play">
+                <button onclick="playRound2()">playerSelection</button>
+            </div>
+            <div id="scissors">
+
+            </div>
 
 
             
-            
-            
-           
-            function playGame() {
-                function playRound(playerSelection, computerSelection) {
-                    for(let i =0; i <= 5; i++);
-                    
-                    if(playerSelection == "rock" && computerSelection == "paper") {
-                        return "You Lose! Paper beats Rock";
-                    } else if(playerSelection == "scissors" && computerSelection == "paper") {
-                        return "You win! scissors beats paper";
-                    } else if(playerSelection == "paper" && computerSelection == "scissors") {
-                        return "You lose! scissors beats paper";
-                    } else if(playerSelection == "scissors" && computerSelection == "rock") {
-                        return "You lose! rock beats scissors";
-                    } else{
-                        return "tie";
-                    }
-                        
-                }
-                    
-            
+            <div id="score">
 
-
-                let playerSelection = prompt('Enter');
-                const computerSelection = getComputerChoice();
-                console.log(getComputerChoice(playerSelection, computerSelection));
-                
-                        
-                
-                let result = playRound(playerSelection, computerSelection);
-                console.log(result);
-
-                
-                
-
-                
-            };
-
-            playGame();
+            </div>
 
             
-         
-            
-
-            
-
-            
-            
-            
-
+        
 
         
-                
 
-
-
-             
-                
+        
             
-
-    
-        </script>
-    
+        
         
     </body>
 </html>
+
+
+
+
+
+
 
 
 
