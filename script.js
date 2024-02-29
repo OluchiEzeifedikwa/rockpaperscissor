@@ -1,42 +1,17 @@
-
-
-
-
 const container = document.querySelector('#container');
-
-
-
-
 const content = document.createElement('div');
-
 
 content.classList.add('content');
 content.textContent = '';
 
 container.appendChild(content);
 
-            
-
-            
-
-
-
-
-
-
-
-            
-            
-            
-           
-        
-const randomNumber = Math.floor(Math.random()*3);
-let result;
 
 function getComputerChoice() {
+  let result;
+  const randomNumber = Math.floor(Math.random()*3);
   if(randomNumber == 0) {
     result = 'rock';
-  
   } else if(randomNumber == 1) {
     result = 'paper';
   } else {
@@ -45,66 +20,78 @@ function getComputerChoice() {
 
   document.getElementById("res").innerHTML = result;
                 
-                
+return result;   
 };
-  
 
 
-  function playRound() {
-    document.getElementById("rock").textContent= "rock";
-  }
-    
-  const rock = document.querySelector('#rock')
-  rock.addEventListener('click', playRound);
-        
-  
-  
-              
-  function playRound1() {
-    document.getElementById("paper").textContent= "paper";
-  }
-  
-  const paper = document.querySelector('#paper')
-  paper.addEventListener('click', playRound1);
-  
+function playRock() {
+  let playerSelection ='rock';
+  const computerSelection =getComputerChoice();
+  document.getElementById("rock").textContent= "rock";
+  displayResult(playerSelection, computerSelection);
+}
+const rock = document.querySelector('#rock')
+rock.addEventListener('click', playRock);
       
-  function playRound2() {
-    document.getElementById("scissors").textContent= "scissors";
-  }  
-  const scissors = document.querySelector('#scissors')
-  scissors.addEventListener('click', playRound2);
+
+
+function playPaper() {
+  let playerSelection ='paper';
+  const computerSelection =getComputerChoice();
+  document.getElementById("paper").textContent= "paper";
+  displayResult(playerSelection, computerSelection);
+}
+const paper = document.querySelector('#paper')
+paper.addEventListener('click', playPaper);
+
+    
+function playScissors() {
+  let playerSelection ='scissors';
+  const computerSelection =getComputerChoice();
+  document.getElementById("scissors").textContent= "scissors";
+  displayResult(playerSelection, computerSelection);
+}  
+const scissors = document.querySelector('#scissors')
+scissors.addEventListener('click', playScissors);
+
+
+
+
+
+
+
   
-
-
-
-let playerSelection = '';
-const computerSelection = getComputerChoice();
-let points;
-
-
+  
   function displayResult(playerSelection, computerSelection) {
-  
+    let points;
+    
     if(playerSelection == "rock" && computerSelection == "paper") {
       points = "You just earned 0 points";
     } else if(playerSelection == "scissors" && computerSelection == "paper") {
-      points = "You win! you just reached 5 points";
-    } else if(playerSelection == "paper" && computerSelection == "scissors") {
-      points = "You lose! scissors beats paper";
-    } else if(playerSelection == "scissors" && computerSelection == "rock") {
-      points ="You lose! rock beats scissors";
+      points = "You just reached 2 points";
+    } else if(playerSelection == "rock" && computerSelection == "scissors") {
+      points = "You just earned 2 points";
+    } else if(playerSelection == "paper" && computerSelection == "rock") {
+      points ="You won!! you just earned 5 points!!!";
+    } else if(playerSelection == "paper" && computerSelection == "paper") {
+      points ="Tie";
+    } else if(playerSelection == "rock" && computerSelection == "rock") {
+      points ="Tie";
+    } else if(playerSelection == "scissors" && computerSelection == "scissors") {
+      points ="Tie";
     } else{
-      points = "tie";
+      points = "Start Again";
     }  
     
     
-    document.getElementById("score").innerHTML = points;
+
 
     
         
     
-    
+    document.getElementById("score").innerHTML = points;
+
   };
-  displayResult();
   
 
 
@@ -148,4 +135,4 @@ let points;
 
             
 
-            
+          
